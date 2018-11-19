@@ -1,0 +1,32 @@
+[
+
+  {
+    "title": "系统配置",
+    "cols": [
+      {
+        "name": "模型配置",
+        "img": "static/images/index/basic_setting.png",
+        "url": "/meta/default/meta-group-list/com.oflane.fasp.ofmodel.entity.of_entity_meta"
+      },
+      {
+        "name": "UI设置",
+        "img": "static/images/index/basic_setting.png",
+        "url": "/meta/default/meta-list/com.oflane.fac.model.fac_meta"
+      }
+    ]
+  },
+  {
+    "title": "基础设置",
+    "cols": [
+      {
+        "name": "自定义档案",
+        "img": "static/images/index/defdoc.png",
+        "url": "/home"
+      }, {
+        "name": "个性化设置",
+        "img": "static/images/index/personalize.png",
+        "url": "/home"
+      }
+    ]
+  }
+]
