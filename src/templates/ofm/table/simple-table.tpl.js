@@ -15,8 +15,9 @@ const DataLoader = fase.DataLoader
  * 简单配置开发
  */
 export default meta => {
-  let {options: { ofmodel }, uimeta, simpleTable: {columns}, xquery, search} = meta
-  let tableColumns = [{selection: true}, ...columns, fanui.generator.buttonsColumn([{click: 'page.edit(scope.row)', text: '查看'}, {click: 'page.delete(scope.row)', text: '删除'}])]
+  console.log(meta)
+  let {options: { ofmodel }, uimeta, simpleTable: {columns: meteColumns}, xquery, search} = meta
+  let columns = [{selection: true, align: 'center'}, ...meteColumns, fanui.generator.buttonsColumn([{click: 'page.edit(scope.row)', text: '查看'}, {click: 'page.delete(scope.row)', text: '删除'}])]
 
   let urls = {
     query: `/ofec/find-page/${ofmodel}`,
@@ -92,7 +93,7 @@ export default meta => {
         '@selection-change': 'page.handleSelectionChange($event)',
         ':loader': 'loader',
         'v-loading': 'page.loading',
-        tableColumns
+        columns
       },
       {
         type: 'pagination',

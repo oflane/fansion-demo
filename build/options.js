@@ -7,7 +7,7 @@ module.exports.getOptions = function(env) {
   }
 }
 module.exports.server = {
-  port: 9090,
+  port: 9999,
   autoOpenBrowser: false
 }
 module.exports.mock = {

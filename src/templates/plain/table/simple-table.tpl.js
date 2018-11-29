@@ -16,8 +16,8 @@ const DataLoader = fase.DataLoader
  * 简单配置开发
  */
 export default meta => {
-  let { options: { urls }, simpleTable: { columns }, xquery, search } = meta
-  let tableColumns = [{ selection: true }, ...columns, fanui.generator.buttonsColumn([{ click: 'page.edit(scope.row)', text: '查看' }, { click: 'page.delete(scope.row)', text: '删除' }])]
+  let { options: { urls }, simpleTable: { columns: metaColumns }, xquery, search } = meta
+  let columns = [{ selection: true }, ...metaColumns, fanui.generator.buttonsColumn([{ click: 'page.edit(scope.row)', text: '查看' }, { click: 'page.delete(scope.row)', text: '删除' }])]
   return {
     layout: {
       conf: {
@@ -81,7 +81,7 @@ export default meta => {
         ':model': 'model.result',
         '@selection-change': 'page.handleSelectionChange($event)',
         ':loader': 'loader',
-        columns: tableColumns
+        columns
       },
       {
         type: 'pagination',

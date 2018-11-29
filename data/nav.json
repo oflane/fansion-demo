@@ -16,12 +16,12 @@
     ]
   },
   {
-    "title": "基础设置",
+    "title": "功能演示",
     "cols": [
       {
-        "name": "自定义档案",
+        "name": "简单用户",
         "img": "static/images/index/defdoc.png",
-        "url": "/home"
+        "url": "/test.test-user.ofm-simple-table"
       }, {
         "name": "个性化设置",
         "img": "static/images/index/personalize.png",

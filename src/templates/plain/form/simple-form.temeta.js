@@ -8,6 +8,7 @@
  * @version 1.0 2017-8-18
  */
 export default {
+  name: '简单表单',
   comps: [
     {
       name: 'options',

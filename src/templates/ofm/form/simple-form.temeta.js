@@ -8,6 +8,7 @@
  * @version 1.0 2017-8-18
  */
 export default {
+  name: 'OF实体简单表单',
   comps: [
     {
       name: 'options',

@@ -8,7 +8,7 @@
  * @version 1.0 2017-8-18
  */
 export default {
-  name: '简单列表',
+  name: 'OF实体简单列表',
   comps: [
     {
       name: 'options',
@@ -31,7 +31,7 @@ export default {
       label: '简单列表'
     }
   ],
-  defaultModel: {options: {urls: {}}},
+  defaultModel: {options: {}},
   config: {
     options: {
       components: [
