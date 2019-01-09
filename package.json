@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A Vue.js project,基于fansion组件的应用示例",
   "author": "yaboocn <yaboocn@qq.com>",
+  "main": "lib/fansion-demo.js",
+  "publishConfig": {
+    "registry": "http://172.20.26.86:8081/repository/hrcloud/"
+  },
   "files": [
     "lib",
     "src"
