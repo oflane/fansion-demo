@@ -21,7 +21,7 @@ export default meta => {
 
   let urls = {
     query: `/ofec/find-page/${ofmodel}`,
-    edit: `/${ofmodel}.ofm-simple-form/:id`,
+    edit: `${ofmodel}.ofm-simple-form/:id`,
     delete: `/ofec/delete/${ofmodel}`
   }
   return {
