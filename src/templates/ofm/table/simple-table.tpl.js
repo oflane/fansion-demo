@@ -16,12 +16,12 @@ const DataLoader = fase.DataLoader
  */
 export default meta => {
   console.log(meta)
-  let {options: { ofmodel }, uimeta, simpleTable: {columns: meteColumns}, xquery, search} = meta
+  let {options: { ofmodel, detailUrl }, uimeta, simpleTable: {columns: meteColumns}, xquery, search} = meta
   let columns = [{selection: true, align: 'center'}, ...meteColumns, fanui.generator.buttonsColumn([{click: 'page.edit(scope.row)', text: '查看'}, {click: 'page.delete(scope.row)', text: '删除'}])]
 
   let urls = {
     query: `/ofec/find-page/${ofmodel}`,
-    edit: `${ofmodel}.ofm-simple-form/:id`,
+    edit: detailUrl,
     delete: `/ofec/delete/${ofmodel}`
   }
   return {

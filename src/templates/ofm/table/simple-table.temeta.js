@@ -44,6 +44,11 @@ export default {
               type: 'input',
               label: 'OF实体: ',
               field: 'ofmodel'
+            },
+            {
+              type: 'input',
+              label: '详情页: ',
+              field: 'detailUrl'
             }
           ]
         }
