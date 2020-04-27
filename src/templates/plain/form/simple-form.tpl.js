@@ -13,7 +13,7 @@ const {fillRestPath, getJson, post} = fase.rest
  * 简单配置开发
  */
 export default meta => {
-  let {options: {urls}, facForm: {groups}, uimeta, methods} = meta
+  const {options: {urls}, facForm: {groups}, uimeta, methods} = meta
   return {
     uimeta,
     layout: {
@@ -47,8 +47,8 @@ export default meta => {
     model: {},
     methods: Object.assign({
       initPage () {
-        let vm = this
-        let id = this.$route.params.id
+        const vm = this
+        const id = this.$route.params.id
         let url
         if (id === 'add') {
           if (!urls.add) {
@@ -64,9 +64,10 @@ export default meta => {
         })
       },
       save () {
+        const vm = this
         post(urls.save, this.model).then(() => {
-          this.$router.back()
-          this.$message({
+          vm.$router.back()
+          vm.$message({
             type: 'success',
             message: '保存成功!'
           })

@@ -16,13 +16,13 @@ const DataLoader = fase.DataLoader
  * 简单配置开发
  */
 export default meta => {
-  let { options: { urls }, simpleTable: { columns: metaColumns }, xquery, search } = meta
-  let columns = [{ selection: true }, ...metaColumns, fanui.generator.buttonsColumn([{ click: 'page.edit(scope.row)', text: '查看' }, { click: 'page.delete(scope.row)', text: '删除' }])]
+  const { options: { urls }, simpleTable: { columns: metaColumns }, xquery, search } = meta
+  const columns = [{ selection: true }, ...metaColumns, fanui.generator.buttonsColumn([{ click: 'page.edit(scope.row)', text: '查看' }, { click: 'page.delete(scope.row)', text: '删除' }])]
   return {
     layout: {
       conf: {
         header: {
-          'class': 'layout-header layout-rows clearfix',
+          class: 'layout-header layout-rows clearfix',
           rows: [
             {
               cols: [
@@ -64,9 +64,9 @@ export default meta => {
       search ? {
         type: 'search',
         pos: 'header-search',
-        'xclass': 'pull-right',
+        xclass: 'pull-right',
         ':loader': 'loader',
-        'advance': 'xqueryComp',
+        advance: 'xqueryComp',
         ...search
       } : null,
       xquery ? {
@@ -74,7 +74,8 @@ export default meta => {
         type: 'xquery',
         pos: 'header-query',
         ':loader': 'loader',
-        ...xquery} : null,
+        ...xquery
+      } : null,
       {
         type: 'simple-table',
         pos: 'body',
@@ -106,21 +107,19 @@ export default meta => {
         this.loader.load()
       },
       queryData () {
-        let vm = this
+        const vm = this
         getJson(urls.query, this.$refs.pagination.getParameters()).then(res => {
           vm.model = res
         })
       },
       add () {
-        let url = fillRestPath(urls.edit, {id: 'add'})
-        this.$router.push(url)
+        this.$router.push(fillRestPath(urls.edit, {id: 'add'}))
       },
       edit (row) {
-        let url = fillRestPath(urls.edit, row)
-        this.$router.push(url)
+        this.$router.push(fillRestPath(urls.edit, row))
       },
       delete (row) {
-        let vm = this
+        const vm = this
         this.$confirm('删除数据操作, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',

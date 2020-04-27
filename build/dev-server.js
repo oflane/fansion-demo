@@ -1,7 +1,7 @@
 require('./check-versions')()
 const proxy = require('./dev-proxy')
 const opt = require('./options')
-const opn = require('opn')
+const opn = require('open')
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')

@@ -13,8 +13,8 @@ const {fillRestPath, getJson, post} = fase.rest
  * 简单配置开发
  */
 export default meta => {
-  let {options: {ofmodel}, facForm: {groups}, uimeta, methods} = meta
-  let urls = {
+  const {options: {ofmodel}, facForm: {groups}, uimeta, methods} = meta
+  const urls = {
     add: `/ofec/create/${ofmodel}`,
     load: `/ofec/load/${ofmodel}/:id`,
     save: '/ofec/save'
@@ -52,20 +52,20 @@ export default meta => {
     model: {},
     methods: Object.assign({
       initPage () {
-        let vm = this
-        let id = this.$route.params.id
+        const vm = this
+        const id = vm.$route.params.id
         let url
         if (id === 'add') {
           if (!urls.add) {
             vm.model = {}
-            this.pageState = 'state_add'
+            vm.pageState = 'state_add'
             return
           }
           url = urls.add
-          this.pageState = 'state_add'
+          vm.pageState = 'state_add'
         } else {
           url = fillRestPath(urls.load, {id})
-          this.pageState = 'state_edit'
+          vm.pageState = 'state_edit'
         }
 
         getJson(url).then(res => {
@@ -73,16 +73,17 @@ export default meta => {
         })
       },
       save () {
-        this.pageLoading = true
-        console.log(this.model)
+        const vm = this
+        vm.pageLoading = true
+        console.log(vm.model)
         post(urls.save, this.model).then(() => {
-          this.$router.back()
-          this.$message({
+          vm.$router.back()
+          vm.$message({
             type: 'success',
             message: '保存成功!'
           })
-          this.pageLoading = false
-        }, () => { this.pageLoading = false })
+          vm.pageLoading = false
+        }, () => { vm.pageLoading = false })
       },
       cancel () {
         this.$router.back()

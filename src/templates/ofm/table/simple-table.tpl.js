@@ -16,10 +16,10 @@ const DataLoader = fase.DataLoader
  */
 export default meta => {
   console.log(meta)
-  let {options: { ofmodel, detailUrl }, uimeta, simpleTable: {columns: meteColumns}, xquery, search} = meta
-  let columns = [{selection: true, align: 'center'}, ...meteColumns, fanui.generator.buttonsColumn([{click: 'page.edit(scope.row)', text: '查看'}, {click: 'page.delete(scope.row)', text: '删除'}])]
+  const {options: { ofmodel, detailUrl }, uimeta, simpleTable: {columns: meteColumns}, xquery, search} = meta
+  const columns = [{selection: true, align: 'center'}, ...meteColumns, fanui.generator.buttonsColumn([{click: 'page.edit(scope.row)', text: '查看'}, {click: 'page.delete(scope.row)', text: '删除'}])]
 
-  let urls = {
+  const urls = {
     query: `/ofec/find-page/${ofmodel}`,
     edit: detailUrl,
     delete: `/ofec/delete/${ofmodel}`
@@ -29,7 +29,7 @@ export default meta => {
     layout: {
       conf: {
         header: {
-          'class': 'layout-header layout-rows clearfix',
+          class: 'layout-header layout-rows clearfix',
           rows: [
             {
               cols: [
@@ -75,9 +75,9 @@ export default meta => {
       meta.search ? {
         type: 'search',
         pos: 'header-search',
-        'xclass': 'pull-right',
+        xclass: 'pull-right',
         ':loader': 'loader',
-        'advance': 'xqueryComp',
+        advance: 'xqueryComp',
         ...search
       } : null,
       meta.xquery ? {
@@ -85,7 +85,8 @@ export default meta => {
         type: 'xquery',
         pos: 'header-query',
         ':loader': 'loader',
-        ...xquery} : null,
+        ...xquery
+      } : null,
       {
         type: 'simple-table',
         pos: 'body',
@@ -129,15 +130,13 @@ export default meta => {
         this.loader.load()
       },
       add () {
-        let url = fillRestPath(urls.edit, {id: 'add'})
-        this.$router.push(url)
+        this.$router.push(fillRestPath(urls.edit, {id: 'add'}))
       },
       edit (row) {
-        let url = fillRestPath(urls.edit, row)
-        this.$router.push(url)
+        this.$router.push(fillRestPath(urls.edit, row))
       },
       delete (row) {
-        let vm = this
+        const vm = this
         this.$confirm('删除数据操作, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',

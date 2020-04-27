@@ -13,7 +13,7 @@ const install = (Vue, opt = {}) => {
   Vue.use(fmeta)
   const plugins = Vue._installedPlugins
   if (plugins) {
-    let fameta = plugins.find(v => v.name === 'fansion-meta')
+    const fameta = plugins.find(v => v.name === 'fansion-meta')
     fameta && fameta.init({ temetas })
   }
 }

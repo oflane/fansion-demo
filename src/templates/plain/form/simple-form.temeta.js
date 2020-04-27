@@ -57,7 +57,7 @@ export default {
       ],
       methods: {
         validate (cb) {
-          let sub = this.$refs['subPage']
+          const sub = this.$refs.subPage
           if (sub.validate) {
             sub.validate(cb)
           } else {
