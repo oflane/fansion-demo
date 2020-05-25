@@ -10,7 +10,7 @@
 import fase from 'fansion-base'
 import fanui from 'fansion-ui'
 
-const { fillRestPath, post, getJson } = fase.rest
+const { furl, post, gson } = fase.rest
 const DataLoader = fase.DataLoader
 /**
  * 简单配置开发
@@ -108,15 +108,15 @@ export default meta => {
       },
       queryData () {
         const vm = this
-        getJson(urls.query, this.$refs.pagination.getParameters()).then(res => {
+        gson(urls.query, this.$refs.pagination.getParameters()).then(res => {
           vm.model = res
         })
       },
       add () {
-        this.$router.push(fillRestPath(urls.edit, {id: 'add'}))
+        this.$router.push(furl(urls.edit, {id: 'add'}))
       },
       edit (row) {
-        this.$router.push(fillRestPath(urls.edit, row))
+        this.$router.push(furl(urls.edit, row))
       },
       delete (row) {
         const vm = this

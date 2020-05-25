@@ -1,7 +1,7 @@
 /*
  * Copyright(c) Oflane Software 2017. All Rights Reserved.
  */
-import { getJson } from '~/utils/rest'
+import { gson } from '~/utils/rest'
 
 const QUERYURL = 'demo/fac/controls/ref-table/query'
 /**
@@ -12,7 +12,7 @@ export default {
     conf: {
       body: 'body',
       footer: {
-        'class': 'layout-footer clearfix',
+        class: 'layout-footer clearfix',
         slot: 'footer'
       }
     }
@@ -71,8 +71,8 @@ export default {
       this.loadData()
     },
     loadData () {
-      let vm = this
-      getJson(QUERYURL).then(res => {
+      const vm = this
+      gson(QUERYURL).then(res => {
         vm.model = res
       })
     },

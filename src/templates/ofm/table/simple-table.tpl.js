@@ -9,7 +9,7 @@
  */
 import fase from 'fansion-base'
 import fanui from 'fansion-ui'
-const {fillRestPath, post} = fase.rest
+const {furl, post} = fase.rest
 const DataLoader = fase.DataLoader
 /**
  * 简单配置开发
@@ -130,10 +130,10 @@ export default meta => {
         this.loader.load()
       },
       add () {
-        this.$router.push(fillRestPath(urls.edit, {id: 'add'}))
+        this.$router.push(furl(urls.edit, {id: 'add'}))
       },
       edit (row) {
-        this.$router.push(fillRestPath(urls.edit, row))
+        this.$router.push(furl(urls.edit, row))
       },
       delete (row) {
         const vm = this

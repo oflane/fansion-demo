@@ -1,7 +1,7 @@
 /*
  * Copyright(c) Oflane Software 2017. All Rights Reserved.
  */
-import { getJson } from '~/utils/rest'
+import { gson } from '~/utils/rest'
 
 const LOADURL = 'demo/fac/config/page-simple-form/load'
 /**
@@ -161,8 +161,8 @@ export default {
   model: {},
   methods: {
     initPage () {
-      let vm = this
-      getJson(LOADURL).then(res => {
+      const vm = this
+      gson(LOADURL).then(res => {
         vm.model = res
       })
     },

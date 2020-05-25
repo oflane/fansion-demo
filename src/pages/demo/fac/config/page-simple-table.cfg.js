@@ -1,7 +1,7 @@
 /*
  * Copyright(c) Oflane Software 2017. All Rights Reserved.
  */
-import { getJson } from '~/utils/rest'
+import { gson } from '~/utils/rest'
 
 const QUERYURL = 'demo/fac/config/page-simple-table/query'
 /**
@@ -79,7 +79,7 @@ export default {
   methods: {
     initPage () {
       let vm = this
-      getJson(QUERYURL).then(res => {
+      gson(QUERYURL).then(res => {
         vm.model = res
       })
     },

@@ -8,7 +8,7 @@
  * @version 1.0 2017-8-18
  */
 import fase from 'fansion-base'
-const {fillRestPath, getJson, post} = fase.rest
+const {furl, gson, post} = fase.rest
 /**
  * 简单配置开发
  */
@@ -57,9 +57,9 @@ export default meta => {
           }
           url = urls.add
         } else {
-          url = fillRestPath(urls.edit, {id})
+          url = furl(urls.edit, {id})
         }
-        getJson(url).then(res => {
+        gson(url).then(res => {
           vm.model = res
         })
       },
