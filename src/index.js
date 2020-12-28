@@ -11,11 +11,7 @@ const install = (Vue, opt = {}) => {
   fase.init({})
   fac.init({templates})
   Vue.use(fmeta)
-  const plugins = Vue._installedPlugins
-  if (plugins) {
-    const fameta = plugins.find(v => v.name === 'fansion-meta')
-    fameta && fameta.init({ temetas })
-  }
+  fase.plugin.init5Exist.init5Exist({ temetas })
 }
 /**
  * 组件入口
