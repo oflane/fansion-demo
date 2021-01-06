@@ -114,7 +114,7 @@ module.exports = {
       'process.env.entry': JSON.stringify(resolvePath('./src/index')),
       'process.env.ContextData': JSON.stringify(resolvePath('./data/nav.json')),
       'process.env.contextPath': JSON.stringify('/oflane'),
-      'process.env.routeLoader': JSON.stringify('/meta/find-all-names/com.oflane.fac.model.fac-meta')
+      'process.env.routeLoader': JSON.stringify('/meta/find-all-codes/com.oflane.fac.model.fac-meta')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
