@@ -5,7 +5,7 @@ import { gson } from '~/utils/rest'
 
 const QUERYURL = 'demo/fac/controls/ref-table/query'
 /**
- * 列表参照开发
+ * 列表引用开发
  */
 export default {
   layout: {

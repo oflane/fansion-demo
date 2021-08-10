@@ -142,7 +142,7 @@ export default {
             },
             {
               type: 'reference',
-              label: '参照: ',
+              label: '引用: ',
               field: 'dept',
               'suggest': [
                 {value: '1', label: '测试1'},
@@ -170,7 +170,7 @@ export default {
       console.log('save', this.model)
     },
     refresh () {
-      this.$closeReference({value: '1', label: '参照选中'})
+      this.$closeReference({value: '1', label: '引用选中'})
     },
     more1 () {
       this.$showDialog('/index')

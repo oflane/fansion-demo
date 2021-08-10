@@ -107,7 +107,7 @@ export default {
         },
         {
           type: 'reference',
-          label: '参照: ',
+          label: '引用: ',
           field: 'dept',
           'ref-to': 'ref-table-demo',
           validate: [
